@@ -9,8 +9,7 @@ function handleDragStart(e) {
     dragSrcEl = this;
 
     e.dataTransfer.effectAllowed = 'move';
-    // e.dataTransfer.setData('text/html', this.innerHTML);
-    e.dataTransfer.setData('text/html', this.outerHTML);
+    e.dataTransfer.setData('text/html', this.innerHTML);
 }
 
 function handleDragEnd(e) {
