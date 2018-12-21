@@ -31,9 +31,14 @@ footer {
 }
 
 .pick-or-ban-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 200px;
     width: 200px;
     border: thick slategrey dashed;
+    color: lightgray;
 }
 
 .pick-or-ban-box.over {
