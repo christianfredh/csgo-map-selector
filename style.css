@@ -1,0 +1,13 @@
+html {
+    font-family: Verdana, Geneva, sans-serif;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+footer {
+    font-size: .7em;
+    margin-top: 50px;
+}
