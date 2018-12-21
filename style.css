@@ -7,7 +7,46 @@ html {
   box-sizing: inherit;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 footer {
     font-size: .7em;
     margin-top: 50px;
+}
+
+.map-selection-method {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.picks-and-bans {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+}
+
+.pick-or-ban-box {
+    height: 200px;
+    width: 200px;
+    border: thick slategrey dashed;
+}
+
+.available-maps {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.map {
+    height: 100px;
+    width: 100px;
+    background-color: steelblue;
+}
+
+.map-selectable {
+    cursor: move;
 }
