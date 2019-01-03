@@ -11,6 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #333;
 }
 
 footer {
@@ -45,15 +46,32 @@ footer {
     border-color: darkslategray;
 }
 
+.taken {
+    border-style: solid;
+}
+
+.taken.ban {
+    border-color: red;
+}
+
+.taken.pick {
+    border-color: green;
+}
+
 .available-maps {
     display: flex;
     justify-content: space-evenly;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/Swimming_pool_underwater_1.JPG');
+    flex-wrap: wrap;
+    padding: 50px;
+    background-size: 100%;
 }
 
 .map {
-    height: 100px;
-    width: 100px;
-    background-color: steelblue;
+    height: 110px;
+    width: 200px;
+    overflow: hidden;
+    margin: 20px;
 }
 
 .map-image {
@@ -66,4 +84,18 @@ footer {
 
 .map-picked-up {
     opacity: .4;
+}
+
+.map-name {    
+    position: sticky;
+    opacity: .8;
+    background-color: #ffffff;
+    padding: 5px 10px;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    font-weight: bold;
+    width: 100%;
+    display: block;
+    text-align: center;
 }

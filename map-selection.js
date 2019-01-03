@@ -1,10 +1,15 @@
-var boxes = document.querySelectorAll('.pick-or-ban-box.available');
+var boxes = document.querySelectorAll('.pick-or-ban-box');
 var maps = document.querySelectorAll('.map-selectable');
 
 var dragSrcEl = null;
 
 function handleDragStart(e) {
-    this.classList.add("map-picked-up");
+
+    if (this.draggable === false) {
+        return;
+    }
+
+    this.classList.add('map-picked-up');
     
     dragSrcEl = this;
 
@@ -13,7 +18,7 @@ function handleDragStart(e) {
 }
 
 function handleDragEnd(e) {
-    this.classList.remove("map-picked-up");
+    this.classList.remove('map-picked-up');
 
     [].forEach.call(boxes, function(box) {
         box.classList.remove('over');
@@ -52,15 +57,70 @@ function handleDrop(e) {
     }
 
     // Set the source column's HTML to the HTML of the column we dropped on.
-    dragSrcEl.innerHTML = 'selected';
+    dragSrcEl.innerHTML = '';
+    dragSrcEl.classList.remove('map-selectable');
+    dragSrcEl.classList.remove('map-picked-up');
+    dragSrcEl.draggable = false;
+
     this.innerHTML = e.dataTransfer.getData('text/html');
+
+    var pick = this.classList.contains('pick');
+    if (pick) {
+        var audio = new Audio('https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-25674/zapsplat_impact_slam_hard_metallic_smash_against_001_25974.mp3');
+        audio.play();
+    } else {
+        var audio = new Audio('https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-12634/zapsplat_household_vhs_c_camcorder_cassette_case_open_002_12805.mp3?_=6');
+        audio.play();
+    }
+
+    setNextAvailable();
   
     return false;
-  }
+}
 
-[].forEach.call(boxes, function(box) {
-    box.addEventListener('dragenter', handleDragEnter, false);
-    box.addEventListener('dragover', handleDragOver, false);
-    box.addEventListener('dragleave', handleDragLeave, false);
-    box.addEventListener('drop', handleDrop, false);
-});
+function setNextAvailable() {
+
+    var next = false;
+
+    [].forEach.call(boxes, function(box) {
+
+        box.removeEventListener('dragenter', handleDragEnter);
+        box.removeEventListener('dragover', handleDragOver);
+        box.removeEventListener('dragleave', handleDragLeave);
+        box.removeEventListener('drop', handleDrop);
+
+        if (box.classList.contains('available')) {
+            box.classList.remove('available');
+            box.classList.add('taken');
+            next = true;
+        } else if (next) {
+            box.classList.add('available');
+            next = false;
+        }
+
+        if (box.classList.contains('available')) {
+            box.addEventListener('dragenter', handleDragEnter, false);
+            box.addEventListener('dragover', handleDragOver, false);
+            box.addEventListener('dragleave', handleDragLeave, false);
+            box.addEventListener('drop', handleDrop, false);
+        }
+    });
+}
+
+function wireUpPickAndBanBoxes() {
+    [].forEach.call(boxes, function(box) {
+        box.removeEventListener('dragenter', handleDragEnter);
+        box.removeEventListener('dragover', handleDragOver);
+        box.removeEventListener('dragleave', handleDragLeave);
+        box.removeEventListener('drop', handleDrop);
+
+        if (box.classList.contains('available')) {
+            box.addEventListener('dragenter', handleDragEnter, false);
+            box.addEventListener('dragover', handleDragOver, false);
+            box.addEventListener('dragleave', handleDragLeave, false);
+            box.addEventListener('drop', handleDrop, false);
+        }
+    });
+}
+
+wireUpPickAndBanBoxes();

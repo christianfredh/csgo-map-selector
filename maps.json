@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Cache",
+        "image": "https://liquipedia.net/commons/images/thumb/d/d9/Cache_csgo.jpg/533px-Cache_csgo.jpg"
+    },
+    {
+        "name": "Dust II",
+        "image": "https://liquipedia.net/commons/images/1/12/Csgo_dust2.0.jpg"
+    },
+    {
+        "name": "Inferno",
+        "image": "https://liquipedia.net/commons/images/2/2b/De_new_inferno.jpg"
+    },
+    {
+        "name": "Mirage",
+        "image": "https://liquipedia.net/commons/images/f/f3/Csgo_mirage.jpg"
+    },
+    {
+        "name": "Nuke",
+        "image": "https://liquipedia.net/commons/images/5/5e/Nuke_csgo.jpg"
+    },
+    {
+        "name": "Overpass",
+        "image": "https://liquipedia.net/commons/images/0/0f/Csgo_overpass.jpg"
+    },
+    {
+        "name": "Train",
+        "image": "https://liquipedia.net/commons/images/5/56/Train_csgo.jpg"
+    }
+]
