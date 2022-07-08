@@ -26,9 +26,5 @@
     {
         "name": "Ancient",
         "image": "https://liquipedia.net/commons/images/3/35/Csgo_ancient.jpeg"
-    },
-    //{
-        //"name": "Train",
-        //"image": "https://liquipedia.net/commons/images/5/56/Train_csgo.jpg"
-    //}
+    }
 ]
