@@ -24,7 +24,11 @@
         "image": "https://liquipedia.net/commons/images/0/0f/Csgo_overpass.jpg"
     },
     {
-        "name": "Train",
-        "image": "https://liquipedia.net/commons/images/5/56/Train_csgo.jpg"
-    }
+        "name": "Ancient",
+        "image": "https://liquipedia.net/commons/images/3/35/Csgo_ancient.jpeg"
+    },
+    //{
+        //"name": "Train",
+        //"image": "https://liquipedia.net/commons/images/5/56/Train_csgo.jpg"
+    //}
 ]
